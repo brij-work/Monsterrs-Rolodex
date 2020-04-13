@@ -17,7 +17,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>My name is Brij.X.{this.state.wname}</p>
-          <button onClick={() => this.setState({wname: 'Hello...Shikha'})}>click to get wifename</button>
+          <button onClick={() => this.setState({wname: 'Hello...Shikha'})}>click me</button>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>

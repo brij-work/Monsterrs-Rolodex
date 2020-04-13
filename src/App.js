@@ -19,13 +19,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <img src={logo} className="App-logo" alt="logo" />*/}
+         <img src={logo} className="App-logo" alt="logo" />
         {this.state.monsters.map((monster) => (
           <h1 key={monster.id}> {monster.name} </h1>
         ))}
       </div>
     );
   }
-}
+} 
 
 export default App;

@@ -6,30 +6,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "This is my wife name : ShikhaBSY",
-      wname: "",
+      monsters: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ monsters: users }));
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>My name is Brij.X.{this.state.wname}</p>
-          <button onClick={() => this.setState({wname: 'Hello...Shikha'})}>click me</button>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {/* <img src={logo} className="App-logo" alt="logo" />*/}
+        {this.state.monsters.map((monster) => (
+          <h1 key={monster.id}> {monster.name} </h1>
+        ))}
       </div>
     );
   }
